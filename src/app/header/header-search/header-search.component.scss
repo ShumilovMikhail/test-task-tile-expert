@@ -1,0 +1,7 @@
+.search-button {
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="header">
+  <div class="menu-burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="logo-container">
+    <a href="#">
+      <img src="assets/images/logo.svg" alt="" class="logo" />
+    </a>
+  </div>
+
+  <div class="content">
+    <app-header-nav-list></app-header-nav-list>
+    <div class="user-actions">
+      <app-header-search></app-header-search>
+      <div class="history">
+        <img src="assets/icons/history.svg" alt="history" />
+      </div>
+      <div class="add">
+        <img src="assets/icons/add.svg" alt="add" width="24px" height="24px" />
+      </div>
+    </div>
+  </div>
+  <div class="users-panel">
+    <div class="notifications">
+      <img
+        src="assets/icons/notifications.svg"
+        alt=""
+        class="notifications-image"
+      />
+    </div>
+    <div class="user-avatar">
+      <img
+        [ngSrc]="'assets/images/user-avatar.png'"
+        alt="user-avatar"
+        fill
+        priority=""
+      />
+    </div>
+  </div>
+</div>
