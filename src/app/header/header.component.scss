@@ -8,7 +8,6 @@
 
 .menu-burger {
   display: none;
-  display: flex;
   flex-direction: column;
   gap: 3px;
   margin-right: 15px;
@@ -26,9 +25,18 @@
 }
 
 .content {
+  position: relative;
   flex: 1 1 auto;
   display: flex;
   gap: 40px;
+}
+
+.search-button {
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .user-actions {
@@ -75,6 +83,10 @@
   .user-actions {
     flex-direction: row-reverse;
     gap: 16px;
+  }
+
+  .content {
+    position: static;
   }
 
   .users-panel {
