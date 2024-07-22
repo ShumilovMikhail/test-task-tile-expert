@@ -1,95 +1,37 @@
-<div class="search">
-  <div class="search-input">
-    <div class="back">
-      <img src="assets/icons/back.svg" alt="back" />
-    </div>
-    <input type="text" placeholder="Поисковый запрос" />
-    <button class="search-button">Искать</button>
+<div
+  class="search-container"
+  appClickOutside
+  (clickOutsideEvent)="isSearchToggle(false)"
+>
+  <div class="search-button">
+    <img
+      src="assets/icons/search.svg"
+      alt="search"
+      width="24px"
+      height="24px"
+      (click)="isSearchToggle(true)"
+    />
   </div>
+  <div
+    [ngClass]="{
+      search: true,
+      active: isSearchOpen
+    }"
+  >
+    <div class="search-input">
+      <div class="back" (click)="isSearchToggle(false)">
+        <img src="assets/icons/back.svg" alt="back" />
+      </div>
+      <input
+        type="text"
+        placeholder="Поисковый запрос"
+        (focus)="isFiltersOpenToggle(true)"
+      />
+      <button class="search-button">Искать</button>
+    </div>
 
-  <div class="inner">
-    <div class="history">
-      <h4>История</h4>
-      <ul class="history-list">
-        <li class="history-item">закрепить теги</li>
-        <li class="history-item">кнопка</li>
-        <li class="history-item">приложение</li>
-        <li class="history-item">форма</li>
-        <li class="history-item">текстовое поле</li>
-        <li class="history-item">выпадающий список</li>
-      </ul>
-    </div>
-    <div class="filters">
-      <label class="author-input">
-        <input type="text" placeholder="Имя или должность" />
-        <div class="me">
-          <img src="assets/icons/me.svg" alt="me" />
-        </div>
-        <span>Автор</span>
-      </label>
-      <div class="include">
-        <ul class="include-list">
-          <li class="include-item">
-            <label>
-              <input type="checkbox" />
-              <div>
-                <img src="assets/icons/tick.svg" alt="tick" />
-              </div>
-              Я участник
-            </label>
-          </li>
-          <li class="include-item">
-            <label>
-              <input type="checkbox" />
-              <div>
-                <img src="assets/icons/tick.svg" alt="tick" />
-              </div>
-              Строгий поиск
-            </label>
-          </li>
-          <li class="include-item">
-            <label>
-              <input type="checkbox" />
-              <div>
-                <img src="assets/icons/tick.svg" alt="tick" />
-              </div>
-              В заголовках
-            </label>
-          </li>
-        </ul>
-      </div>
-      <div class="only">
-        <h4>Только</h4>
-        <ul class="only-list">
-          <li class="only-item">
-            <label>
-              <input type="checkbox" />
-              <div>
-                <img src="assets/icons/tick.svg" alt="tick" />
-              </div>
-              Теги
-            </label>
-          </li>
-          <li class="only-item">
-            <label>
-              <input type="checkbox" />
-              <div>
-                <img src="assets/icons/tick.svg" alt="tick" />
-              </div>
-              Просьбы
-            </label>
-          </li>
-          <li class="only-item">
-            <label>
-              <input type="checkbox" />
-              <div>
-                <img src="assets/icons/tick.svg" alt="tick" />
-              </div>
-              Контакты
-            </label>
-          </li>
-        </ul>
-      </div>
-    </div>
+    @if (isFiltersOpen) {
+    <app-header-search-filters></app-header-search-filters>
+    }
   </div>
 </div>

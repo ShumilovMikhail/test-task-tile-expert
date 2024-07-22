@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
 import { HeaderNavListComponent } from './header-nav-list/header-nav-list.component';
 import { HeaderSearchComponent } from './header-search/header-search.component';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-header',
